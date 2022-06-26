@@ -11,7 +11,7 @@ router.post('/signup', async(req, res) => {
     try {
         const info = req.body
         const user = await person.create(info)
-        res.status(200).send(user)
+        res.status(201).send(user)
     } catch(err) {
         res.status(404).send('Could not create user')
     }
