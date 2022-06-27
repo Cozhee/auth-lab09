@@ -26,5 +26,6 @@
     "jsonwebtoken": "^8.5.1",
     "sequelize": "^6.21.1",
     "supertest": "^6.2.3"
-  }
+  },
+  "devDependencies": {}
 }
