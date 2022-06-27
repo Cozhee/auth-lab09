@@ -32,3 +32,6 @@ N/A
 - Feature One: Added route
 - POST : `/signup`
 - POST : `/signin`
+
+## UML
+![auth-lab-09-uml](https://user-images.githubusercontent.com/55909913/175998675-182965d1-bb76-47cf-b694-a625f796bcfb.png)
