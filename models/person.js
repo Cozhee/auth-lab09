@@ -45,6 +45,9 @@ const personModel = (sequelize, DataTypes) => {
 
     model.beforeCreate(async (person) => {
         person.password = await bcrypt.hash(person.password, 5)
+        const token = person.token
+        const parsedToken = jwt.verify(token, SECRET)
+        console.log(parsedToken)
     })
 
     model.authenticateBasic = async function(username, password) {
@@ -57,6 +60,7 @@ const personModel = (sequelize, DataTypes) => {
     model.authenticateToken = async function (token) {
         try {
             const parsedToken = jwt.verify(token, SECRET);
+            console.log(parsedToken)
             const user = await this.findOne({where: { username: parsedToken.username } });
             if (user) { return user; }
         } catch (e) {
